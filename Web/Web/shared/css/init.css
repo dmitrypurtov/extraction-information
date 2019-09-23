@@ -79,16 +79,16 @@ a {
 }
 
 html, body {
-	font-family: 'Montserrat', sans-serif;
-	color: #010001;
-	max-width: 1920px;
-	font-size: 14px;
-	line-height: 20px;
-	font-weight: 400;
-	min-width: 310px;
-	background-color: #fff;
-	width: 100%;
-	margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    color: #010001;
+    max-width: 1920px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    min-width: 310px;
+    background-color: #fff;
+    width: 100%;
+    margin: 0 auto;
 }
 
 P {

@@ -129,4 +129,5 @@ STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'shared/static'),
     os.path.join(PROJECT_ROOT, 'shared/images'),
     os.path.join(PROJECT_ROOT, 'shared/css'),
+    os.path.join(PROJECT_ROOT, 'shared/libs'),
 ]
