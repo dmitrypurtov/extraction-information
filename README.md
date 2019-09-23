@@ -1,4 +1,12 @@
-extraction-key-information
+# Извелечении информации из текста
 
-Сгенерировать requirements: pip freeze > requirements.txt
-Восстановить пакеты:pip install -r requirements.txt
+## Работа с requirements
+```
+pip freeze > requirements.txt
+pip install -r requirements.txt
+```
+
+## Запуск web-приложения
+```
+python manage.py runserver
+```
