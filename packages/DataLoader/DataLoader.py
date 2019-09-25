@@ -2,7 +2,6 @@ import os
 import json
 from bs4 import BeautifulSoup
 
-
 class DataLoader:
     def __init__(self):
         self
@@ -18,8 +17,3 @@ class DataLoader:
             description = BeautifulSoup(description).get_text()
             result.append(description)
         return result
-
-
-# test = DataLoader()
-# textList = test.getTextList()
-# print(textList)

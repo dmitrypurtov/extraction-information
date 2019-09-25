@@ -1,3 +1,5 @@
+from ipymarkup import show_markup
+
 from yargy import Parser, rule, and_, or_
 from yargy.interpretation import fact, attribute
 from yargy.predicates import eq, gte, lte, length_eq, dictionary, normalized

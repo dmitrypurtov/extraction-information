@@ -10,6 +10,7 @@ class ExtractionDate:
 
     def setText(self, text):
         self.text = text
+        return self
 
     def getDate(self):
         parser = Parser(DATE)
@@ -17,11 +18,3 @@ class ExtractionDate:
         if DateFact:
             return datetime.date(DateFact.fact.year, DateFact.fact.month, DateFact.fact.day)
         return None
-
-    def getJson(self):
-        data = {
-            "name": "John",
-            "age": 30,
-            "city": "New York"
-        }
-        return json.dumps(data)
