@@ -1,6 +1,6 @@
 from fact import DATE, Parser, DateFact
 from ipymarkup import show_markup
-from Web.Yargy.DataLoader.DataLoader import DataLoader
+from DataLoader import DataLoader
 
 
 line = DataLoader().getTextList().pop(0) + " 18 июля 2016"

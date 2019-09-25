@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from Web.Yargy.Analysis.dateanalysis import ExtractionDate
-from Web.Yargy.DataLoader.DataLoader import DataLoader
+from Yargy.DateAnalysis import ExtractionDate
+from DataLoader import DataLoader
 
 app_name = 'StructuralAnalysis'
 
