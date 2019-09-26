@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from structuralanalysis.date.extraction import ExtractionDate
-from DataLoader import DataLoader
+from dataloader import DataLoader
 
 app_name = 'structural'
 

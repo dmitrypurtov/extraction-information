@@ -1,6 +1,6 @@
 import datetime
 from yargy import Parser
-from fulldate import FULL_DATE_PARSER, FullDateFact
+from .fulldate import FULL_DATE_PARSER, FullDateFact
 
 class ExtractionDate:
     text = ""
