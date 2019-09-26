@@ -1,11 +1,10 @@
 from ipymarkup import show_markup
-
-from yargy import Parser, rule, and_, or_
+from yargy import rule, and_, or_
 from yargy.interpretation import fact, attribute
 from yargy.predicates import eq, gte, lte, length_eq, dictionary, normalized
 from IPython.display import display
 
-DateFact = fact('DateFact', ['year', 'month', 'day',
+FullDateFact = fact('DateFact', ['year', 'month', 'day',
                          attribute('current_era', True)])
 
 MONTHS = {
@@ -24,21 +23,21 @@ MONTHS = {
 }
 
 MONTH_NAME = dictionary(MONTHS).interpretation(
-    DateFact.month.normalized().custom(MONTHS.__getitem__)
+    FullDateFact.month.normalized().custom(MONTHS.__getitem__)
 )
 
 MONTH = and_(
     gte(1),
     lte(12)
 ).interpretation(
-    DateFact.month.custom(int)
+    FullDateFact.month.custom(int)
 )
 
 DAY = and_(
     gte(1),
     lte(31)
 ).interpretation(
-    DateFact.day.custom(int)
+    FullDateFact.day.custom(int)
 )
 
 YEAR_WORD = or_(
@@ -50,7 +49,7 @@ YEAR = and_(
     gte(1000),
     lte(2100)
 ).interpretation(
-    DateFact.year.custom(int)
+    FullDateFact.year.custom(int)
 )
 
 YEAR_SHORT = and_(
@@ -58,14 +57,14 @@ YEAR_SHORT = and_(
     gte(0),
     lte(99)
 ).interpretation(
-    DateFact.year.custom(lambda _: 1900 + int(_))
+    FullDateFact.year.custom(lambda _: 1900 + int(_))
 )
 
 ERA_YEAR = and_(
     gte(1),
     lte(100000)
 ).interpretation(
-    DateFact.year.custom(int)
+    FullDateFact.year.custom(int)
 )
 
 ERA_WORD = rule(
@@ -75,10 +74,10 @@ ERA_WORD = rule(
         rule(normalized('наша'), normalized('эра'))
     )
 ).interpretation(
-    DateFact.current_era.const(False)
+    FullDateFact.current_era.const(False)
 )
 
-DATE = or_(
+FULL_DATE_PARSER = or_(
     rule(
         DAY,
         '.',
@@ -115,5 +114,5 @@ DATE = or_(
         ERA_WORD,
     )
 ).interpretation(
-    DateFact
+    FullDateFact
 )

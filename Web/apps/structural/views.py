@@ -1,9 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from Yargy.DateAnalysis import ExtractionDate
+from structuralanalysis.date.extraction import ExtractionDate
 from DataLoader import DataLoader
 
-app_name = 'StructuralAnalysis'
+app_name = 'structural'
 
 def index(request):
     context = {
@@ -17,7 +17,7 @@ def get(request):
     context = {
         "text": text,
         "json": {
-            "data": ExtractionDate().setText(text).getDate()
+            "data": ExtractionDate(text).getDate()
         }
     }
     return render(request, app_name + '/templates/index.html', context)
