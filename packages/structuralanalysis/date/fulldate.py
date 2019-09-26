@@ -4,7 +4,7 @@ from yargy.interpretation import fact, attribute
 from yargy.predicates import eq, gte, lte, length_eq, dictionary, normalized
 from IPython.display import display
 
-FullDateFact = fact('DateFact', ['year', 'month', 'day',
+FullDateFact = fact('FullDateFact', ['year', 'month', 'day',
                          attribute('current_era', True)])
 
 MONTHS = {

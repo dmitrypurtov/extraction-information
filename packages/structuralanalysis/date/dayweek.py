@@ -2,12 +2,11 @@ from ipymarkup import show_markup
 from yargy import rule, and_, or_
 from yargy.interpretation import fact, attribute
 from yargy.predicates import eq, gte, lte, length_eq, dictionary, normalized
-from IPython.display import display
 
 DayWeekDateFact = fact('DayWeekDateFact', [
                        'week', attribute('current_era', True)])
 
-WEEK = {
+WEEKS = {
     'Понедельник': 1,
     'Вторник': 2,
     'Среда': 3,
@@ -31,8 +30,8 @@ WEEK = {
     'Вс': 7,
 }
 
-WEEK_NAME = dictionary(WEEK).interpretation(
-    DayWeekDateFact.month.normalized().custom(WEEK.__getitem__)
+WEEK_NAME = dictionary(WEEKS).interpretation(
+    DayWeekDateFact.week.normalized().custom(WEEKS.__getitem__)
 )
 
 WEEK_DATE_PARSER = or_(
@@ -40,5 +39,5 @@ WEEK_DATE_PARSER = or_(
         WEEK_NAME
     )
 ).interpretation(
-    MonthDayDateFact
+    DayWeekDateFact
 )

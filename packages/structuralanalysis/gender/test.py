@@ -1,14 +1,12 @@
 from yargy import Parser
-from fulldate import FULL_DATE_PARSER, FullDateFact
-from monthday import MOUNTH_DAY_DATE_PARSER, MonthDayDateFact
-from dayweek import WEEK_DATE_PARSER, DayWeekDateFact
+from gendertype import GENDER_PARSER, GenderFact
 from ipymarkup import show_markup
 from dataloader import DataLoader
 from random import sample
 from IPython.display import display
 
 lines = DataLoader().getTextList()
-parser = Parser(FULL_DATE_PARSER)
+parser = Parser(GENDER_PARSER)
 
 # 5 first element from list
 for line in lines[:20]:

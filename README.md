@@ -10,3 +10,9 @@ pip install -r requirements.txt
 ```
 python manage.py runserver
 ```
+
+## Jupyter Notebook
+Для более кофортной разработки модулей лучше использовать Jupyter Notebook, из-за более информативной визуализация
+```
+jupyter notebook
+```
